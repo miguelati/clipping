@@ -1,0 +1,9 @@
+es:
+  activerecord:
+    models:
+      entity: "Entidades"
+    attributes:
+      user:
+        name: "Nombre"
+        avatar: "Imagen para el mail"
+        created_at: "Creado el"

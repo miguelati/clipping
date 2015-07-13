@@ -1,0 +1,10 @@
+es:
+  shippings:
+    index:
+      title: "Lista de envíos"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"
+      send: "Enviar"
+      send_demo: "Demo"

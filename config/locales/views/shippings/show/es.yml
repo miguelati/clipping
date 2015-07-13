@@ -1,0 +1,9 @@
+es:
+  shippings:
+    show:
+      title: "Envío"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"
+      back: "Volver"

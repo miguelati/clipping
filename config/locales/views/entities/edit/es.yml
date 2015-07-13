@@ -1,0 +1,8 @@
+es:
+  entities:
+    edit:
+      title: "Editar entidad"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"

@@ -1,0 +1,9 @@
+es:
+  users:
+    show:
+      title: "Usuario"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      back: "Volver"
+      destroy: "Eliminar"

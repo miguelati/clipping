@@ -1,0 +1,8 @@
+es:
+  receivers:
+    index:
+      title: "Lista de recipientes"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"

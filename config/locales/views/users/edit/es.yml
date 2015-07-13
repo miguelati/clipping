@@ -1,0 +1,8 @@
+es:
+  users:
+    edit:
+      title: "Editar usuario"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"

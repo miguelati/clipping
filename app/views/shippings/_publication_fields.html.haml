@@ -1,0 +1,23 @@
+.nested-fields
+  .row
+    .span4
+      = f.input_field :category_id, as: :hidden, value: publication_fields
+      = f.input_field :source, as: :hidden
+      = f.input_field :source_url, as: :hidden
+      = f.input :url, placeholder: "Url de la noticia", input_html: {class: "get_url_data"}
+    .span4
+      = f.input :title, label: "Titulo", placeholder: "Titulo de la noticia"
+  .row
+    .span8
+      = f.input :short_content, as: :text, placeholder: "Contenido corto (Copete)", input_html: {style: 'width: 600px', rows: 5}, label: "Copete"
+  .row
+    .span6
+      &nbsp;
+      .date_time.input-append.date
+        = f.input :published_at, label: "Fecha de publicación" do
+          =f.input_field :published_at, as: :string, placeholder: "Fecha de publicación", :'data-format' => "yyyy-MM-dd"
+          %span.add-on
+            %i{:'data-time-icon' => 'icon-time', :'data-date-icon' => 'icon-calendar'}
+    .span2= link_to_remove_association "Eliminar", f
+  .row
+    .span8 &nbsp;

@@ -1,0 +1,9 @@
+$("#category_parent_id option").remove()
+$("#category_parent_id").append($("<option></option>").val('').html('(Raíz)'))
+<% if @categories.present? %>
+	<% @categories.each do |cat| %>
+		$("#category_parent_id").append($("<option></option>").val('<%= cat.id %>').html('<%= cat.name %>'))
+	<% end %>
+<% else %>
+	$("#category_parent_id").append($("<option></option>").val('').html('No tiene categorias'))
+<% end %>

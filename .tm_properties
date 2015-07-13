@@ -1,0 +1,6 @@
+windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/username\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/username/~/}:${1/\A(?=.)/ – /}}/}"
+
+[ "*.{haml,coffee,scss,yml}" ]
+softWrap = false  
+tabSize = 2 
+softTabs = true

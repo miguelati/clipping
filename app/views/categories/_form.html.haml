@@ -1,0 +1,7 @@
+= simple_form_for @category, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :entity_id, collection: Entity.where(id: current_user.entities.map{|ob| ob.id }), prompt: "Seleccione.."
+  = f.input :name
+  = f.input :is_important
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), categories_path, :class => 'btn'

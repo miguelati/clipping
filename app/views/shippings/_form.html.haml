@@ -1,0 +1,20 @@
+= simple_form_for @shipping, :html => { :class => 'form-horizontal' }, :wrapper => :bootstrap do |f|
+  = f.input :name, hint: "Si va vacío, por defecto se carga como nombre la fecha del día"
+  = f.input :individuals, hint: "Mails separados por comas para envios ocacionales. Ej. pepe@gmail.com,juan@gmail.com"
+  = f.input :entity_id do
+    %h4{style: "position:relative; top: -5px"}= @entity.name
+    =f.input_field :entity_id, as: :hidden, value: @entity.id
+  %h3
+    = Category.model_name.human.pluralize
+  %hr
+  .control-group{id:"category"}
+    =render "categories_list", categories: @categories, f: f, shipping_id: @shipping.id
+  %h3 Anuncios
+  .control-group{id:"source_covers"}
+    =f.simple_fields_for :source_covers do |cover|
+      = render 'source_cover_fields', :f => cover
+    .links
+      = link_to_add_association 'Agregar portada', f, :source_covers
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), shippings_path, :class => 'btn'

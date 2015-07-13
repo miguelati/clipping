@@ -1,0 +1,8 @@
+es:
+  shippings:
+    edit:
+      title: "Editar envios"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"

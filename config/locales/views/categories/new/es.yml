@@ -1,0 +1,10 @@
+es:
+  categories:
+    controller_messages:
+      insert: "La categoria se ha agregado satisfactoriamente."
+    new:
+      title: "Nueva categoría"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"

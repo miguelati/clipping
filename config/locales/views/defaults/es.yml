@@ -1,0 +1,13 @@
+es:
+  menu:
+    config:
+      title: "Configuración"
+      submenu:
+        categories: "Categorias"
+        users: "Usuarios"
+        receivers: "Recipientes"
+        entities: "Entidades"
+    shipping:
+      title: "Envíos"
+      submenu:
+        new: "Nuevo"

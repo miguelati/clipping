@@ -1,0 +1,9 @@
+es:
+  categories:
+    show:
+      title: "Categoría"
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"
+      back: "Volver"

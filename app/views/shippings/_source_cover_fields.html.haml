@@ -1,0 +1,7 @@
+.nested-fields
+  .row
+    .span8
+      = f.input :image_cover, as: :file
+      = f.input :source_id, collection: Source.all
+    .span4
+      %span= link_to_remove_association "Eliminar", f

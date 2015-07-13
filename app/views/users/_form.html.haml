@@ -1,0 +1,10 @@
+= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :is_admin
+  = f.input :email
+  = f.association :entities, input_html: {multiple: true, style: "width: 230px"}
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'

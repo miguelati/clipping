@@ -1,0 +1,8 @@
+%ul
+  - categories.each do |category|
+    %li
+      %h3{id: "category_#{category.id}"}
+        = category.name
+        =link_to_add_association 'Agregar', f, :publications, :'data-association-insertion-node' => "#category_#{category.id}", :'data-association-insertion-position' => 'after'          
+      =f.simple_fields_for :publications, Publication.where(category_id: category.id, shipping_id: shipping_id) do |publication|
+        =render "publication_fields", f: publication, publication_fields: category.id

@@ -1,0 +1,100 @@
+%html
+  %head
+    %meta(charset="utf-8")
+    %title Mailing Pepsico
+    %style(type="text/css")
+      :css
+        td {
+          padding: 3px;
+        }
+        .gray {
+        	background-color: #CCC;
+        	font-family:Arial, Helvetica, sans-serif;
+        	font-size: 12px;
+        	color: #333;
+        }
+        .titulo {
+        	font-family: Arial, Helvetica, sans-serif;
+        	font-size: 14px;
+        	color: #FFF;
+        	background-color: #2B55A4;
+        	font-weight: bold;
+        	padding: 8px;
+        }
+        .titulo_competencia{
+        	font-family: Arial, Helvetica, sans-serif;
+        	font-size: 14px;
+        	color: #FFF;
+        	font-weight: bold;
+        	padding: 8px;
+        	background-color:#099;
+        	text-transform:uppercase;
+        	font-weight:bold;
+        }
+        .titulo_dos {
+        	font-family: Arial, Helvetica, sans-serif;
+        	font-size: 12px;
+        	color:#333;
+        	background-color:#8795CD;
+        	padding: 3px;
+        	font-weight: bold;
+        }
+        a.link_origen{
+        	color: #2B55A4;
+        	font-weight:bold;
+        	text-decoration:none;
+        }
+        a.link_noticia{
+        	color:#333;
+        	text-decoration:underline;
+        }
+        .noticia{
+        	background: #CCC;
+        }
+        p{
+        	margin: 0px;
+        	padding:0px;
+        	font-size:10px;
+        }
+  %body
+    %table{width: '100%', border: "0", style: "border:#CCC 1px solid; font-family:Arial, Helvetica, sans-serif; color:#333;font-size: 12px"}
+      %tr
+        %th{colspan: "4", align: "right", scope:"col", style: "padding: 8px"}
+      %tr
+        %th{colspan:"4", align:"right", scope:"col",style:"padding: 8px"}
+          -unless @shipping.entity.avatar.url.nil?
+            =image_tag @shipping.entity.avatar.url, width: "200", height: "51", alt:"Logo Pepsico", style: "border:none"
+      %tr
+        %td{colspan:"4", align:"right", class:"gray", style:"padding: 5px"}= l(Time.now, format: :mail).capitalize
+      %tr
+        %td{width:"1%"} &nbsp;
+        %td{width:"12%"} &nbsp;
+        %td{width:"13%"} &nbsp;
+        %td{width:"70%"} &nbsp;
+      - Category.where(id: @shipping.publications.map(&:category_id)).each do |category|
+        %tr
+          - titulo = "titulo"
+          - titulo = "titulo_competencia" if category.is_important
+          %td{colspan:"4", class:"#{titulo}", style:"font-size: 16px"}= category.name
+          - Publication.where(category_id: category.id, shipping_id: @shipping.id).each do |publication|
+            %tr
+              %td &nbsp;
+              %td= l publication.published_at, format: :short unless publication.published_at.nil?
+              %td= link_to publication.source, publication.source_url, class: "link_origen"
+              %td
+                =link_to publication.title, publication.url, class:"link_noticia"
+                %p= publication.short_content
+    %table{width:"100%", border:"0", style:"border:#CCC 1px solid; font-family:Arial, Helvetica, sans-serif; color:#333;font-size: 12px"}
+      %tr
+        %td{colspan:"3", class:"titulo"} Anuncios
+      - @shipping.source_covers.each_slice(3).to_a.each do |row|
+        %tr
+          - row.each do |cover|
+            %td{width:"30%"}
+              =image_tag cover.image_cover.url, width: "229", height: "299", alt: cover.source.name
+    %p{style:"font-family:Arial, Helvetica, sans-serif; font-size:10px;"}
+      Servicio proveído por
+      %br
+      = link_to "http://www.socialcherry.com.py" do
+        =image_tag "cherry.png", width: "137", height: "36", alt: "Cherry"
+      %br

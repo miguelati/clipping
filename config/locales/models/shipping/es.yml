@@ -1,0 +1,18 @@
+es:
+  activerecord:
+    models:
+      shipping: "Envios"
+    attributes:
+      shipping:
+        entity_id: "Entidad"
+        user_id: "Usuario"
+        name: "Nombre"
+        individuals: "Mails ocacionales"
+        total: "Total"
+        processed: "Prodesados"
+        begin_at: "Inició"
+        end_at: "Finalizó"
+        state: "Estado"
+        active: "Activo"
+        created_at: "Creado el"
+        updated_at: "Actualizado el"

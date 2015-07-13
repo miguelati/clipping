@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    models:
+      receiver: "Recipiente"
+    attributes:
+      receiver:
+        entity_id: "Entidad"
+        name: "Nombre"
+        email: "E-mail"
+        active: "Activo"
+        created_at: "Creado el"
+        updated_at: "Actualizado el"

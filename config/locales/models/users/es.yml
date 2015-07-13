@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    models:
+      user: "Usuarios"
+    attributes:
+      user:
+        name: "Nombre"
+        is_admin: "Administrador"
+        email: "E-mail"
+        current_sign_in_at: "Logueado hoy"
+        last_sign_in_at: "Ultimo logueo"
+        created_at: "Creado el"

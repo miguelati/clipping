@@ -1,0 +1,13 @@
+es:
+  activerecord:
+    models:
+      category: "Categorias"
+    attributes:
+      category:
+        entity_id: "Entidad"
+        active: "Activo"
+        parent_id: "Nivel superior"
+        name: "Nombre"
+        is_important: "es importante"
+        created_at: "Creado el"
+        updated_at: "Actualizado el"

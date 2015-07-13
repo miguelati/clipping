@@ -1,0 +1,7 @@
+es:
+  entities:
+    index:
+      new: "Nuevo"
+      list: "Lista"
+      edit: "Editar"
+      destroy: "Eliminar"
